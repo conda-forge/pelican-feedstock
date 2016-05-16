@@ -5,7 +5,7 @@ Home: http://getpelican.com/
 
 Package license: AGPL-3.0
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: A tool to generate a static blog from reStructuredText or Markdown input files.
 
@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/pelican-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/pelican-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/pelican-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/pelican-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/pelican-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/pelican-feedstock/branch/master)
