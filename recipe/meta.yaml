@@ -43,8 +43,8 @@ test:
   commands:
     - pelican --help
     - pelican-import --help
-    - pelican-quickstart --help
     - pelican-themes --help
+    #- pelican-quickstart --help
 
 about:
   home: http://getpelican.com/
