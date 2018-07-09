@@ -14,14 +14,15 @@ Summary: A tool to generate a static blog from reStructuredText or Markdown inpu
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/pelican-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/pelican-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/pelican-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/pelican-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/pelican-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/pelican-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/pelican-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/pelican-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pelican/badges/version.svg)](https://anaconda.org/conda-forge/pelican)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pelican/badges/downloads.svg)](https://anaconda.org/conda-forge/pelican)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pelican-green.svg)](https://anaconda.org/conda-forge/pelican) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pelican.svg)](https://anaconda.org/conda-forge/pelican) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pelican.svg)](https://anaconda.org/conda-forge/pelican) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pelican.svg)](https://anaconda.org/conda-forge/pelican) |
 
 Installing pelican
 ==================
@@ -66,6 +67,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
