@@ -1,20 +1,17 @@
-{% set name = "pelican" %}
-{% set version = "3.7.1" %}
-{% set sha256 = "2a5347fe47464ee743bff99b6e81d1b5823f2e70e7be5bd6ed66a5bdd5f3578b" %}
+{% set version = "4.0.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: pelican
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/p/pelican/pelican-{{ version }}.tar.gz
+  sha256: ad22bf8f141ce0989855106c49a7ab55ca2bcc9541e71cc8fb8cf55f394407fe
 
 build:
+  number: 0
   noarch: python
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
   entry_points:
     - pelican = pelican:main
     - pelican-import = pelican.tools.pelican_import:main
@@ -23,21 +20,19 @@ build:
 
 requirements:
   host:
-    - pip
     - python
-    - setuptools
+    - pip
   run:
     - python
-    - feedgenerator
-    - jinja2
+    - feedgenerator >=1.9
+    - jinja2 >=2.7
     - pygments
     - docutils
-    - pytz
+    - pytz >=0a
     - blinker
     - unidecode
-    - six
+    - six >=1.4
     - python-dateutil
-    - ghp-import
 
 test:
   imports:
@@ -47,7 +42,6 @@ test:
     - pelican --help
     - pelican-import --help
     - pelican-themes --help
-    #- pelican-quickstart --help
 
 about:
   home: http://getpelican.com/
