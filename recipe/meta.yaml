@@ -1,6 +1,6 @@
 {% set name = "pelican" %}
-{% set version = "3.7.1" %}
-{% set sha256 = "2a5347fe47464ee743bff99b6e81d1b5823f2e70e7be5bd6ed66a5bdd5f3578b" %}
+{% set version = "4.0.0" %}
+{% set sha256 = "ad22bf8f141ce0989855106c49a7ab55ca2bcc9541e71cc8fb8cf55f394407fe" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - pelican = pelican:main
