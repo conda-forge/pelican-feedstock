@@ -1,4 +1,4 @@
-{% set version = "4.2.0" %}
+{% set version = "4.5.0" %}
 
 package:
   name: pelican
@@ -6,14 +6,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pelican/pelican-{{ version }}.tar.gz
-  sha256: be7ea9a09311374322b5579c88975ae003409e40c833e761780a0d0dbd84e756
+  sha256: d08119a3ed3eb7d3f2d0a9a5b929be648ad3c84d018b19517ecc608383b824e6
 
 build:
   number: 0
   noarch: python
   script:
     - rm -f pyproject.toml
-    - "{{ PYTHON }} -m pip install . --no-deps -vv"
+    - {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - pelican = pelican:main
     - pelican-import = pelican.tools.pelican_import:main
@@ -49,7 +49,7 @@ about:
   home: http://getpelican.com/
   license_file: LICENSE
   license: AGPL-3.0
-  summary: 'A tool to generate a static blog from reStructuredText or Markdown input files.'
+  summary: A tool to generate a static blog from reStructuredText or Markdown input files.
 
 extra:
   recipe-maintainers:
