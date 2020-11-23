@@ -3,7 +3,7 @@ About pelican
 
 Home: http://getpelican.com/
 
-Package license: AGPL-3.0
+Package license: AGPL-3.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pelican-feedstock/blob/master/LICENSE.txt)
 
