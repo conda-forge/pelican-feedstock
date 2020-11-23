@@ -1,4 +1,4 @@
-{% set version = "4.5.1" %}
+{% set version = "4.5.2" %}
 
 package:
   name: pelican
@@ -6,14 +6,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pelican/pelican-{{ version }}.tar.gz
-  sha256: 377e423058ce9951d340be9c061f9ba43e99ea8086bac1214c1cf5ab66896d10
+  sha256: 408a0bd177bb81e7823d3302149090c74f155df7fcbdfd415dc2520d1f8ad08b
 
 build:
   number: 0
   noarch: python
   script:
     - rm -f pyproject.toml
-    - {{ PYTHON }} -m pip install . --no-deps -vv
+    - {{ PYTHON }} -m pip install . -vv
   entry_points:
     - pelican = pelican:main
     - pelican-import = pelican.tools.pelican_import:main
@@ -22,19 +22,18 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6,<4.0
     - pip
   run:
-    - python
-    - feedgenerator >=1.9
-    - jinja2 >=2.7
-    - pygments
-    - docutils
-    - pytz >=0a
-    - blinker
-    - unidecode
-    - six >=1.4
-    - python-dateutil
+    - python >=3.6,<4.0
+    - blinker >=1.4,<2.0
+    - docutils >=0.16,<0.17
+    - feedgenerator >=1.9,<2.0
+    - jinja2 >=2.11,<2.12
+    - pygments >=2.6.1,<2.7.0
+    - python-dateutil >=2.8,<3.0
+    - pytz >=2020.1,<2021.0
+    - unidecode >=1.1,<2.0
 
 test:
   imports:
@@ -48,7 +47,7 @@ test:
 about:
   home: http://getpelican.com/
   license_file: LICENSE
-  license: AGPL-3.0
+  license: AGPL-3.0-only
   summary: A tool to generate a static blog from reStructuredText or Markdown input files.
 
 extra:
