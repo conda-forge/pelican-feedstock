@@ -1,29 +1,30 @@
+{% set name = "pelican" %}
 {% set version = "4.5.3" %}
 
+
 package:
-  name: pelican
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/pelican/pelican-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pelican-{{ version }}.tar.gz
   sha256: 7a769a233561c104341d53500046079d10f72bc19e5d6d99521cce5328219bd9
 
 build:
   number: 0
   noarch: python
-  script:
-    - rm -f pyproject.toml
-    - {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - pelican = pelican:main
+    - pelican = pelican.__main__:main
     - pelican-import = pelican.tools.pelican_import:main
+    - pelican-plugins = pelican.plugins._utils:list_plugins
     - pelican-quickstart = pelican.tools.pelican_quickstart:main
     - pelican-themes = pelican.tools.pelican_themes:main
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6,<4.0
     - pip
+    - python >=3.6,<4.0
   run:
     - python >=3.6,<4.0
     - blinker >=1.4,<2.0
@@ -38,11 +39,16 @@ requirements:
 test:
   imports:
     - pelican
-    - pelican.tools
+    - pelican.plugins
   commands:
+    - pip check
     - pelican --help
     - pelican-import --help
+    - pelican-plugins --help
+    - pelican-quickstart --help
     - pelican-themes --help
+  requires:
+    - pip
 
 about:
   home: http://getpelican.com/
