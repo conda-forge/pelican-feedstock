@@ -1,5 +1,5 @@
 {% set name = "pelican" %}
-{% set version = "4.7.1" %}
+{% set version = "4.7.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pelican-{{ version }}.tar.gz
-  sha256: 5baba5db1ef378ab308a459dc9028bd9fa099b1bd109000a18d23ee8469bcce9
+  sha256: 1cf11912811e053da9915265dbe72da570c63e25ae00ea01a616429458b33354
 
 build:
   number: 0
