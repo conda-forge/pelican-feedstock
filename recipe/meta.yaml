@@ -1,5 +1,5 @@
 {% set name = "pelican" %}
-{% set version = "4.8.0" %}
+{% set version = "4.9.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pelican-{{ version }}.tar.gz
-  sha256: 6445c00cff2142a30592a2de046e5647b84a36c5a0cfafc0eba75abbabb2b4b1
+  sha256: c08434f0df2a6b649cfe485cbf0d8fdb727ff89ba6ecb1c867f88ceb2f37f179
 
 build:
   number: 0
@@ -23,19 +23,21 @@ build:
 
 requirements:
   host:
+    - python >=3.9,<4.0
+    - pdm-backend
     - pip
-    - python >=3.6,<4.0
   run:
-    - python >=3.6,<4.0
-    - blinker >=1.4
-    - docutils >=0.16
-    - feedgenerator >=1.9
-    - jinja2 >=2.7
-    - pygments >=2.6
-    - python-dateutil >=2.8
-    - pytz >=2020.1
-    - rich >=10.1
-    - unidecode >=1.1
+    - python >=3.9,<4.0
+    - blinker >=1.7.0
+    - docutils >=0.20.1
+    - feedgenerator >=2.1.0
+    - jinja2 >=3.1.2
+    - ordered-set >=4.1.0
+    - pygments >=2.16.1
+    - python-dateutil >=2.8.2
+    - rich >=13.6.0
+    - unidecode >=1.3.7
+    - watchfiles >=0.21.0
 
 test:
   imports:
