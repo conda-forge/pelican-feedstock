@@ -19,15 +19,15 @@ build:
     - pelican-plugins = pelican.plugins._utils:list_plugins
     - pelican-quickstart = pelican.tools.pelican_quickstart:main
     - pelican-themes = pelican.tools.pelican_themes:main
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
 
 requirements:
   host:
-    - python >=3.9,<4.0
+    - python {{ python_min }}
     - pdm-backend
     - pip
   run:
-    - python >=3.9,<4.0
+    - python >={{ python_min }}
     - blinker >=1.7.0
     - docutils >=0.20.1
     - feedgenerator >=2.1.0
@@ -51,6 +51,7 @@ test:
     - pelican-quickstart --help
     - pelican-themes --help
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
