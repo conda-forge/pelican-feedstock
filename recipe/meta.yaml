@@ -1,5 +1,5 @@
 {% set name = "pelican" %}
-{% set version = "4.10.2" %}
+{% set version = "4.11.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pelican-{{ version }}.tar.gz
-  sha256: 04932e82dc7542bae7f1830710978836ca00608aa4ece7206dc13185a08c4562
+  sha256: b90234487b818d391733acc1306b785934009749b1fc112b879df9bd89478bd8
 
 build:
   number: 0
@@ -19,7 +19,7 @@ build:
     - pelican-plugins = pelican.plugins._utils:list_plugins
     - pelican-quickstart = pelican.tools.pelican_quickstart:main
     - pelican-themes = pelican.tools.pelican_themes:main
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
@@ -33,7 +33,7 @@ requirements:
     - feedgenerator >=2.1.0
     - jinja2 >=3.1.2
     - ordered-set >=4.1.0
-    - pygments >=2.16.1
+    - pygments >=2.16.1,<2.19.0
     - python-dateutil >=2.8.2
     - rich >=13.6.0
     - unidecode >=1.3.7
