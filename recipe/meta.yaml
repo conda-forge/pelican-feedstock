@@ -1,5 +1,5 @@
 {% set name = "pelican" %}
-{% set version = "4.11.0" %}
+{% set version = "4.12.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pelican-{{ version }}.tar.gz
-  sha256: b90234487b818d391733acc1306b785934009749b1fc112b879df9bd89478bd8
+  sha256: 3983b5d2dc84c7bdf967154359077a2b78c0bbd2f7dcc55292133a7779609458
 
 build:
   number: 0
@@ -29,11 +29,11 @@ requirements:
   run:
     - python >={{ python_min }}
     - blinker >=1.7.0
-    - docutils >=0.20.1
+    - docutils >=0.22.0
     - feedgenerator >=2.1.0
     - jinja2 >=3.1.2
     - ordered-set >=4.1.0
-    - pygments >=2.16.1,<2.19.0
+    - pygments >=2.16.1,<2.20.0
     - python-dateutil >=2.8.2
     - rich >=13.6.0
     - unidecode >=1.3.7
